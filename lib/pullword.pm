@@ -3,6 +3,7 @@ package pullword;
 use 5.010;
 use strict;
 use warnings;
+use Encode;
 use Mojo::UserAgent;
 
 our @ISA    = qw(Exporter);
@@ -76,11 +77,11 @@ sub PWhash {
 sub PWget {
 my ($source,$threshold,$debug)=@_;
  $source=decode("utf8",$source);
-my $myurl="http://http://api.pullword.com/post.php?source=".$source."&param1=".$threshold."&param2=".$debug;
+my $myurl="http://api.pullword.com/post.php?source=".$source."&param1=".$threshold."&param2=".$debug;
 #$myurl="http://43.241.223.121/post.php?source=".$source."&param1=".$threshold."&param2=".$debug;
 #$myurl="http://120.26.6.172/post.php?source=".$source."&param1=".$threshold."&param2=".$debug;
 my $ua = Mojo::UserAgent->new;
-$ua->transactor->name("pullword /Perl agent");
+$ua->transactor->name("Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36");
 my $tx=$ua->get($myurl);
 return $tx->res->body;
 }
