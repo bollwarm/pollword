@@ -11,7 +11,7 @@ my $value='关关雎鸠，在河之洲。窈窕淑女，君子好逑。
 my $threshold=0.5;
 my $debug=1;
 
-#print PWget($value,$threshold,$debug);
+print PWget($value,$threshold,$debug);
 my $fchash=PWhash($value);
 
 print "$_ $fchash->{$_} \n" for(sort{$fchash->{$b}<=>$fchash->{$a}} keys %{$fchash});
