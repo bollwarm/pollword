@@ -1,4 +1,5 @@
 Changes
+example/pulloword.pl
 lib/pullword.pm
 Makefile.PL
 MANIFEST			This list of files
@@ -7,3 +8,4 @@ t/00-load.t
 t/manifest.t
 t/pod-coverage.t
 t/pod.t
+xt/boilerplate.t

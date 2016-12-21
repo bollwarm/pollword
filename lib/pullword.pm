@@ -16,11 +16,11 @@ pullword - The perl agent for Pullword(a online Chinese segmentation System) api
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 
 =head1 SYNOPSIS
@@ -64,7 +64,7 @@ OUT hash: word as kery and It's frequency count;
 sub PWhash {
   my $res=shift;
   my $result=PWget($res,0,0);
-  my @fc=split /\r\s/ms,$result;
+  my @fc=split /\n/ms,$result;
   my %fc;
   for(@fc) {
      chmod;
