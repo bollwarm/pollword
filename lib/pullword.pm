@@ -83,7 +83,15 @@ my $myurl="http://api.pullword.com/post.php?source=".$source."&param1=".$thresho
 my $ua = Mojo::UserAgent->new;
 $ua->transactor->name("Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36");
 my $tx=$ua->get($myurl);
-return $tx->res->body;
+my $replys=$tx->res->body;
+my $out;
+my @tmsg=split /\r\n/sm,$replys;
+        for(@tmsg){
+        next if /^$/;
+        $out.=$_."\n";
+        }
+
+return $out;
 }
 
 =head1 AUTHOR
