@@ -22,7 +22,6 @@ Version 0.02
 
 our $VERSION = '0.02';
 
-
 =head1 SYNOPSIS
 
 Quick summary of what the module does.
@@ -60,38 +59,46 @@ OUT hash: word as kery and It's frequency count;
 
 =cut
 
-
 sub PWhash {
-  my $res=shift;
-  my $result=PWget($res,0,0);
-  my @fc=split /\n/ms,$result;
-  my %fc;
-  for(@fc) {
-     chmod;
-     next if /^$/;
-     $fc{$_}++;
+    my $res    = shift;
+    my $result = PWget( $res, 0, 0 );
+    my @fc     = split /\n/ms, $result;
+    my %fc;
+    for (@fc) {
+        chmod;
+        next if /^$/;
+        $fc{$_}++;
     }
-  return \%fc;
+    return \%fc;
 }
 
 sub PWget {
-my ($source,$threshold,$debug)=@_;
- $source=decode("utf8",$source);
-my $myurl="http://api.pullword.com/post.php?source=".$source."&param1=".$threshold."&param2=".$debug;
+    my ( $source, $threshold, $debug ) = @_;
+    $source = decode( "utf8", $source );
+    my $myurl =
+        "http://api.pullword.com/post.php?source="
+      . $source
+      . "&param1="
+      . $threshold
+      . "&param2="
+      . $debug;
+
 #$myurl="http://43.241.223.121/post.php?source=".$source."&param1=".$threshold."&param2=".$debug;
 #$myurl="http://120.26.6.172/post.php?source=".$source."&param1=".$threshold."&param2=".$debug;
-my $ua = Mojo::UserAgent->new;
-$ua->transactor->name("Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36");
-my $tx=$ua->get($myurl);
-my $replys=$tx->res->body;
-my $out;
-my @tmsg=split /\r\n/sm,$replys;
-        for(@tmsg){
+    my $ua = Mojo::UserAgent->new;
+    $ua->transactor->name(
+"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36"
+    );
+    my $tx     = $ua->get($myurl);
+    my $replys = $tx->res->body;
+    my $out;
+    my @tmsg = split /\r\n/sm, $replys;
+    for (@tmsg) {
         next if /^$/;
-        $out.=$_."\n";
-        }
+        $out .= $_ . "\n";
+    }
 
-return $out;
+    return $out;
 }
 
 =head1 AUTHOR
@@ -149,4 +156,4 @@ This program is released under the following license: Perl
 
 =cut
 
-1; # End of pullword
+1;    # End of pullword
