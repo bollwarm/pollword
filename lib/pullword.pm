@@ -33,6 +33,10 @@ Perhaps a little code snippet.
     print PWget("清华大学是好学校",0,1);
     ...
 
+=head2 pullword API
+
+    http://api.pullword.com/
+
 =head1 EXPORT
 
 A list of functions that can be exported.  You can delete this section
