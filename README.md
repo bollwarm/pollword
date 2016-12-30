@@ -2,7 +2,7 @@
 
  pullword - The perl agent for Pullword(a online Chinese segmentation System) api! .
 
- 梁博在线分词pullword的perl客户端，支持直接结果以及一个分词词频的hash。
+  梁博在线分词pullword的perl客户端，支持直接结果以及一个分词词频的hash。
 
 ### 梁博pullword接口API地址
 
