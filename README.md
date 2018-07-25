@@ -109,20 +109,23 @@ perldoc command.
 You can also look for information at:
 
 ### RT, CPAN's request tracker (report bugs here)
+
         http://rt.cpan.org/NoAuth/Bugs.html?Dist=pullword
+
 ### AnnoCPAN, Annotated CPAN documentation
-        http://annocpan.org/dist/pullword
+ 
+       http://annocpan.org/dist/pullword
 
 ### CPAN Ratings
         http://cpanratings.perl.org/d/pullword
 
 ### Search CPAN
         http://search.cpan.org/dist/pullword/
-###Git repo
+## Git repo
 
-[github] (https://github.com/bollwarm/pullword.git)
+[github](https://github.com/bollwarm/pullword.git)
 
-[oschina] (https://git.oschina.net/ijz/pullword.git)
+[oschina](https://gitee.com/ijz/pullword.git)
 
 ## LICENSE AND COPYRIGHT
 
